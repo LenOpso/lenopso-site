@@ -1,0 +1,497 @@
+/* =========================================================
+   LENOPSO V0.1
+   Global styles
+   ========================================================= */
+
+:root {
+    --background: #070b12;
+    --background-alt: #0c121d;
+    --surface: #111927;
+
+    --text: #f4f7fb;
+    --text-muted: #aab4c3;
+
+    --blue: #2f7df6;
+    --blue-light: #67a3ff;
+
+    --gold: #d8ae52;
+    --gold-light: #f0cf7b;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --max-width: 1180px;
+    --narrow-width: 820px;
+
+    --radius: 14px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.container {
+    width: min(100% - 48px, var(--max-width));
+    margin-inline: auto;
+}
+
+.narrow {
+    max-width: var(--narrow-width);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-inner {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.brand-len {
+    color: var(--text);
+}
+
+.brand-opso {
+    color: var(--blue);
+}
+
+.site-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.site-nav a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(47, 125, 246, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 25% 70%,
+            rgba(216, 174, 82, 0.07),
+            transparent 28%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    padding-top: 70px;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-top: 18px;
+
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-top: 32px;
+
+    color: var(--text-muted);
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 36px;
+    padding: 13px 23px;
+
+    border: 1px solid var(--blue);
+    border-radius: 8px;
+
+    background: var(--blue);
+    color: white;
+
+    font-weight: 700;
+    font-size: 0.92rem;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: #246bd8;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 120px 0;
+}
+
+.section-alt {
+    background: var(--background-alt);
+}
+
+.section h2 {
+    max-width: 900px;
+    margin-top: 16px;
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.section h2 span {
+    color: var(--blue-light);
+}
+
+.body-text {
+    margin-top: 28px;
+
+    color: var(--text-muted);
+    font-size: 1.08rem;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    margin-top: 60px;
+}
+
+.card {
+    padding: 32px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(47, 125, 246, 0.35);
+}
+
+.card-number {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.card h3 {
+    margin-top: 16px;
+    font-size: 1.35rem;
+}
+
+.card p {
+    margin-top: 12px;
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.principles {
+    margin-top: 55px;
+
+    border-top: 1px solid var(--border);
+}
+
+.principle {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+
+    padding: 24px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.principle strong {
+    color: var(--text);
+}
+
+.principle span {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+    padding: 130px 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(47, 125, 246, 0.16),
+            transparent 45%
+        ),
+        #09101b;
+
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+}
+
+.cta h2 {
+    margin-top: 16px;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.cta h2 span {
+    color: var(--gold-light);
+}
+
+.cta p:not(.section-label) {
+    max-width: 600px;
+    margin: 24px auto 0;
+
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.button-light {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #080b10;
+}
+
+.button-light:hover {
+    background: var(--gold-light);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 60px 0 25px;
+    background: #05080e;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-inner p {
+    max-width: 420px;
+    margin-top: 12px;
+
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-contact a:hover {
+    color: var(--text);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    color: #687384;
+    font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+        width: min(100% - 32px, var(--max-width));
+    }
+
+    .site-header {
+        position: absolute;
+    }
+
+    .header-inner {
+        min-height: 75px;
+    }
+
+    .site-nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .section {
+        padding: 85px 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        margin-top: 40px;
+    }
+
+    .principle {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-contact {
+        align-items: flex-start;
+    }
+
+    .cta {
+        padding: 90px 0;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 1.25rem;
+        margin-top: 0.75rem;
+    }
+
+    .footer-social a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-social a:hover {
+        color: var(--blue-light);
+    }
+}
